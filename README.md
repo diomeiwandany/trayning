@@ -1,6 +1,7 @@
 ## Commit Code
 IP: Installed Package
-AM: Added Migration/Model(s)
+AMD: Added Model(s)
+AMI: Added Migration(s)
 CM: Configure Migration
 SE: Seeding Added
 
