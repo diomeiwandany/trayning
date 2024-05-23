@@ -9,5 +9,6 @@ AD: Added Data
 CMO: Configure Model(s)
 ER: Edit README.md
 CB: Configure Backend
+CF: Configure Frontend
 
 To be Continued..
