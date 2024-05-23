@@ -6,4 +6,7 @@ CM: Configure Migration
 SE: Seeding Added
 GI: Modify config/config.json
 AD: Added Data
+CMO: Configure Model(s)
+ER: Edit README.md
+
 To be Continued..
