@@ -10,5 +10,7 @@ CMO: Configure Model(s)
 ER: Edit README.md
 CB: Configure Backend
 CF: Configure Frontend
+AV : Added Views
+AP : Added Public
 
 To be Continued..

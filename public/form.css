@@ -1,0 +1,40 @@
+body {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(31, 23, 29);
+}
+
+.container{
+   
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 40vw;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px; 
+}
+
+input, select {
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    margin: auto; 
+    display: block; 
+    background-color: rgb(31, 23, 29);
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+}
