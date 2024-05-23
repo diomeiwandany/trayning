@@ -1,0 +1,26 @@
+[{
+    "id": 1,
+    "courseName": "VueJS",
+    "CategoryId": 1,
+    "duration": 418
+  }, {
+    "id": 2,
+    "courseName": "React",
+    "CategoryId": 1,
+    "duration": 479
+  }, {
+    "id": 3,
+    "courseName": "Django",
+    "CategoryId": 2,
+    "duration": 304
+  }, {
+    "id": 4,
+    "courseName": "Express",
+    "CategoryId": 2,
+    "duration": 388
+  }, {
+    "id": 5,
+    "courseName": "Laravel",
+    "CategoryId": 2,
+    "duration": 394
+  }]
