@@ -4,20 +4,36 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Course extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
-      Course.belongsTo(models.Category, {foreignKey: 'CategoryId'})
-      Course.belongsToMany(models.User, {through: models.UsersCourse})
+      Course.belongsTo(models.Category, { foreignKey: 'CategoryId' })
+      Course.belongsToMany(models.User, { through: models.UsersCourse })
     }
   }
   Course.init({
-    courseName: DataTypes.STRING,
-    duration: DataTypes.INTEGER
+    courseName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "Field courseName must be filled."
+        },
+        notEmpty: {
+          msg: "Field courseName cannot be empty."
+        },
+      }
+    },
+    duration: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "Field duration must be filled."
+        },
+        notEmpty: {
+          msg: "Field duration cannot be empty."
+        },
+      }
+    }
   }, {
     sequelize,
     modelName: 'Course',

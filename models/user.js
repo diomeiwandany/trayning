@@ -4,21 +4,48 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
-      User.hasOne(models.Profile, {foreignKey: 'UserId'})
-      User.belongsToMany(models.Course, {through: models.UsersCourse})
+      User.hasOne(models.Profile, { foreignKey: 'UserId' })
+      User.belongsToMany(models.Course, { through: models.UsersCourse })
     }
   }
   User.init({
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    role: DataTypes.STRING
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "Field email must be filled."
+        },
+        notEmpty: {
+          msg: "Field email cannot be empty."
+        },
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "Field password must be filled."
+        },
+        notEmpty: {
+          msg: "Field password cannot be empty."
+        },
+      }
+    },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "Field role must be filled."
+        },
+        notEmpty: {
+          msg: "Field role cannot be empty."
+        },
+      }
+    }
   }, {
     sequelize,
     modelName: 'User',
