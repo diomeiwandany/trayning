@@ -9,8 +9,8 @@ class Controller {
                     include: Course
                 }
             });
-            res.render ('home', {data});
-            // res.send (data)
+            res.send(data)
+            res.render('home', { data });
         } catch (error) {
             res.send(error);
         }
