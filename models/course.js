@@ -1,4 +1,5 @@
 'use strict';
+const helper = require("../helpers");
 const {
   Model
 } = require('sequelize');
@@ -8,6 +9,32 @@ module.exports = (sequelize, DataTypes) => {
       Course.belongsTo(models.Category, { foreignKey: 'CategoryId' })
       Course.belongsToMany(models.User, { through: models.UsersCourse })
     }
+
+    static async getCourses(Category, option) {
+      try {
+        let data = await Course.findAll({
+          include: {
+            model: Category,
+          },
+          where: option,
+          order: [[`courseName`, "asc"]],
+        });
+        return data;
+
+      } catch (error) {
+        throw error;
+      }
+    }
+    get codeCourse() {
+      let value = `${this.courseName[0]}${this.id}`;
+      return helper.formatCode(value, this.CategoryId);
+  }
+
+   get timeConvert (){
+    const minutes = Math.floor(this.duration[0] / 60);
+        const seconds = this.duration % 60
+        return `${minutes}:${seconds < 10 ? `0` : ``}${sec} `
+  }
   }
   Course.init({
     courseName: {
